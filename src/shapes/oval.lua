@@ -20,7 +20,7 @@ function oval:poly(dx,dy)
   local r=self.r
   local h=self.h
   local s=(r+h)/2
-  local n=mid(8,s,32)
+  local n=mid(6,s,12)
   for i=1,n do
     local d=1/n*i
     local x=dx+(r*cos(d))

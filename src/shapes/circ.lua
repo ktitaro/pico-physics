@@ -18,7 +18,7 @@ function circ:poly(dx,dy)
   local p={}
   local r=self.r
   local s=flr(6.28*r)
-  local n=mid(8,s,32)
+  local n=mid(6,s,12)
   for i=1,n do
     local d=1/n*i
     local x=dx+(r*cos(d))
