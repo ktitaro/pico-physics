@@ -17,10 +17,9 @@ function circ:poly(dx,dy)
   local p={}
   local r=self.r
   local s=flr(6.28*r)
-  local n=max(s,8)
-  local a=6.28/n
+  local n=mid(8,s,32)
   for i=1,n do
-    local d=a*(i-1)
+    local d=1/n*i
     local x=dx+(r*cos(d))
     local y=dy+(r*sin(d))
     add(p,vec2:new(x,y))

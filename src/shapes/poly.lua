@@ -18,7 +18,7 @@ function poly:poly(dx,dy)
   for i in all(self.v) do
     local x=dx+i.x
     local y=dy+i.y
-    add(vec2:new(x,y))
+    add(p,vec2:new(x,y))
   end
   return p
 end

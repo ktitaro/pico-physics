@@ -5,7 +5,6 @@ oval.__index=oval
 oval.r=0 -- radius
 oval.h=0 -- height
 
-
 function oval:new(p)
   return setmetatable(p,self)
 end
@@ -20,10 +19,9 @@ function oval:poly(dx,dy)
   local r=self.r
   local h=self.h
   local s=(r+h)/2
-  local n=max(s,8)
-  local a=6.28/n
+  local n=mid(8,s,32)
   for i=1,n do
-    local d=n*(i-1)
+    local d=1/n*i
     local x=dx+(r*cos(d))
     local y=dy+(h*sin(d))
     add(p,vec2:new(x,y))
