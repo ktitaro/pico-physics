@@ -9,9 +9,10 @@ function oval:new(p)
   return setmetatable(p,self)
 end
 
--- Approximates oval to a
--- convex polygon. The number
--- of edges grows with radius.
+-- Approximates an oval to a
+-- convex polygon and applies
+-- an offset of `dx`, `dy` to
+-- the each vertex.
 function oval:poly(dx,dy)
   dx=(dx or 0)
   dy=(dy or 0)

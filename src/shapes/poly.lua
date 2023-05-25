@@ -9,8 +9,10 @@ function poly:new(p)
 end
 
 -- Since polygon doesn't need
--- any approximation, simply
--- returns the vertexes.
+-- no additional approximation,
+-- it returns the same poly but
+-- with an offset of `dx`, `dy`
+-- applied to the each vertex.
 function poly:poly(dx,dy)
   dx=(dx or 0)
   dy=(dy or 0)

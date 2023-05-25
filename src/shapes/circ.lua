@@ -9,8 +9,9 @@ function circ:new(p)
 end
 
 -- Approximates circle to a
--- convex polygon. The number
--- of edges grows with radius.
+-- convex polygon and applies
+-- an offset of `dx`, `dy` to
+-- the each vertex.
 function circ:poly(dx,dy)
   dx=(dx or 0)
   dy=(dy or 0)

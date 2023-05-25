@@ -9,8 +9,10 @@ function rect:new(p)
   return setmetatable(p,self)
 end
 
--- Approximates rect
--- to a convex polygon.
+-- Approximates rect to a
+-- convex polygon and applies
+-- an offset of `dx`, `dy` to
+-- the each vertex.
 function rect:poly(dx,dy)
   dx=(dx or 0)
   dy=(dy or 0)
