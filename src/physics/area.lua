@@ -1,21 +1,28 @@
 area={}
 area.__index=area
 
--- Properties
-area.s=nil -- shape of an area
-area.x=0 -- position on x axis
-area.y=0 -- position on y axis
-area.l=0 -- collision layer
-area.m=0 -- collision mask
+-- Properties:
+area.cm=0 -- collision mask
+area.cl=0 -- collision layer
 
-function area:new(p)
-  if (p.l) p.l=tobin(p.l)
-  if (p.m) p.m=tobin(p.m)
-  return setmetatable(p,self)
+-- Creates an instance of an area,
+-- using a provided set of props.
+function area:new(shape,p)
+  if (p.cl) p.cl=tobin(p.cl)
+  if (p.cm) p.cm=tobin(p.cm)
+  setmetatable(shape,self)
+  return shape:new(p)
 end
 
-function area:collide_tile_at()
-end
+function area:collides_at(x,y)
 
-function area:collide_area_at()
+  -- local w,h=self.w,self.h
+  -- local b1={x=x,y=y,w=w,h=h}
+  -- for b2 in all(_world.o) do
+  --   if (b2~=self) then
+  --     local k=aabb:overlaps(b1,b2)
+  --     local m=(self.cm&b2.cl~=0)
+  --     if (k and m) return b2.cl
+  --   end
+  -- end
 end

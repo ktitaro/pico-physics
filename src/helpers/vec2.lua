@@ -25,7 +25,7 @@ end
 -- Normalizes a 2d vector.
 function vec2:norm()
   local m=self:mag()
-  if (m==) return self
+  if (m==0) return self
   local x=self.x/m
   local y=self.y/m
   return vec2:new(x,y)

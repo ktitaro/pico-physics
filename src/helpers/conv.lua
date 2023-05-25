@@ -6,7 +6,7 @@ function tobin(v)
   if (type(v)=="table") then
     for i=1,#v do b+=1<<v[i] end
   elseif (type(v)=="number") then
-    b=1<<abs(v)
+    b=1<<v
   end
   return b
 end
