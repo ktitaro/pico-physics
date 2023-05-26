@@ -11,11 +11,14 @@ function poly2:new(p)
   return shape2.new(self,p)
 end
 
+-- Since poly2 doesn't need any
+-- approximation, it will only
+-- apply an offset its vertexes.
 function poly2:get_poly(pt)
   pt=(pt or self.p)
   local p={}
-  for v in all(self.v) do
-    add(p,v+pt)
+  for i=1,#self.v do
+    add(p,self.v[i]+pt)
   end
   return p
 end

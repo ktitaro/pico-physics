@@ -14,15 +14,14 @@ function area:new(shape,p)
   return shape:new(p)
 end
 
-function area:collides_at(x,y)
-
-  -- local w,h=self.w,self.h
-  -- local b1={x=x,y=y,w=w,h=h}
-  -- for b2 in all(_world.o) do
-  --   if (b2~=self) then
-  --     local k=aabb:overlaps(b1,b2)
-  --     local m=(self.cm&b2.cl~=0)
-  --     if (k and m) return b2.cl
-  --   end
-  -- end
+function area:collides_at(reg,pt)
+  local p1=self:get_poly(pt)
+  for v in all(reg) do
+    if (v~=self) then
+      local p2=v:get_poly()
+      local k=sat2:check(p1,p2)
+      local m=self.cm&v.cl~=0
+      if (k and m) return v.cl
+    end
+  end
 end

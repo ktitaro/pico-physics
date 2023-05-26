@@ -3,8 +3,10 @@ vec2.__index=vec2
 
 -- Creates new 2d vector.
 function vec2:new(x,y)
+  x,y=(x or 0),(y or 0)
   return setmetatable({
-    x=x,y=y},self)
+    x=x,y=y
+  },self)
 end
 
 -- Calculates the squared
