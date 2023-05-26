@@ -15,18 +15,21 @@ end
 -- Approximates an oval2 to a
 -- convex polygon and returns
 -- an array of its vertexes.
-function oval2:get_poly()
+function oval2:get_poly(pt)
+  pt=(pt or self.p)
   local p={}
   local r=self.r
   local h=self.h
   local s=(r+h)/2
-  local n=mid(6,s,12)
+  local n=max(14,s)
   local a=1/n
-  for i=1,n do
+  local mx=r-0.001
+  local my=h-0.001
+  for i=0,(n-1) do
     add(p,vec2:new(
-      r*cos(a*i),
-      h*sin(a*i)
-    )+self.p)
+      mid(-mx,r*cos(a*i),mx),
+      mid(-my,h*sin(a*i),my)
+    )+pt)
   end
   return p
 end

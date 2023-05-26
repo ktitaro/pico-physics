@@ -15,9 +15,9 @@ end
 -- Approximates a rect2 to a
 -- convex polygon and returns
 -- an array of its vertexes.
-function rect2:get_poly()
-  local x=self.p.x
-  local y=self.p.y
+function rect2:get_poly(pt)
+  pt=(pt or self.p)
+  local x,y=pt.x,pt.y
   local w=self.w/2
   local h=self.h/2
   return {

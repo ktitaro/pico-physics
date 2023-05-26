@@ -7,8 +7,6 @@ shape2.__index=shape2
 
 -- Properties:
 shape2.p=vec2:new() -- position (x,y)
--- shape2.w=0 -- width of the shape.
--- shape2.h=0 -- height of the shape.
 
 -- Creates an instance of shape2,
 -- using a provided set of props.
