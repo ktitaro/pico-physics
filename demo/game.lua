@@ -2,9 +2,9 @@ local reg={}
 
 function _init()
   add(reg,robby:new(10,10,reg))
-  add(reg,rubby:new(90,90,reg))
-  add(reg,rubby:new(30,50,reg))
-  add(reg,rubby:new(90,30,reg))
+  -- add(reg,rubby:new(90,90,reg))
+  -- add(reg,rubby:new(30,50,reg))
+  -- add(reg,rubby:new(90,30,reg))
 end
 
 function _update()
