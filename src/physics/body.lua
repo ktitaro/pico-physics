@@ -87,24 +87,32 @@ end
 -- either a map tile or another area
 -- on the next step on the x axis.
 function body:check_x(dr)
-  local k,r=nil,self.reg
+  local r=self.reg
   local p1=self.p+vec2:new(dr,0)
-  local p2=self.p+vec2:new(dr,0)
-  if (dr>0) p1.x+=self.w
-  k=(k or self:hits_tile_at(p1))
-  k=(k or self:hits_area_at(r,p2))
-  if (k~=nil) return k
+  local k1=self:hits_area_at(r,p1)
+  if (k1~=nil) return k1
+  for i=1,self.h do
+    local dy=(self.h-i)
+    local dx=(self.w/2*(dr+1))
+    local p2=p1+vec2:new(dx,dy)
+    local k2=self:hits_tile_at(p2)
+    if (k2~=nil) return k2
+  end
 end
 
 -- Checks if body would collide with
 -- either a map tile or another area
 -- on the next step on the y axis.
 function body:check_y(dr)
-  local k,r=nil,self.reg
+  local r=self.reg
   local p1=self.p+vec2:new(0,dr)
-  local p2=self.p+vec2:new(0,dr)
-  if (dr>0) p1.y+=self.h
-  k=(k or self:hits_tile_at(p1))
-  k=(k or self:hits_area_at(r,p2))
-  if (k~=nil) return k
+  local k1=self:hits_area_at(r,p1)
+  if (k1~=nil) return k1
+  for i=1,self.w do
+    local dx=(self.w-i)
+    local dy=(self.h/2*(dr+1))
+    local p2=p1+vec2:new(dx,dy)
+    local k2=self:hits_tile_at(p2)
+    if (k2~=nil) return k2
+  end
 end
