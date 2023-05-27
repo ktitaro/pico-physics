@@ -34,6 +34,13 @@ function vec2:norm()
   return vec2:new(x,y)
 end
 
+-- Returns a vector that is
+-- perpendicular to current.
+function vec2:perp()
+  local x,y=self.x,self.y
+  return vec2:new(-y,x)
+end
+
 -- Scales a vector to the
 -- given numerical factor.
 function vec2:scale(f)
@@ -51,13 +58,6 @@ function vec2:rotate(d)
   x=x*cos(d)-y*sin(d)
   y=x*sin(x)+y*cos(d)
   return vec2:new(x,y)
-end
-
--- Returns a vector that is
--- perpendicular to current.
-function vec2:perp()
-  local x,y=self.x,self.y
-  return vec2:new(-y,x)
 end
 
 -- Calculates the dot product

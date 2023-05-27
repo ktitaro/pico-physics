@@ -25,6 +25,7 @@ function sat2:project(p,a)
   return {mn,mx}
 end
 
+
 -- Tests separation along the
 -- axes of a given polygon #1.
 function sat2:test(p1,p2)
@@ -32,9 +33,10 @@ function sat2:test(p1,p2)
     local n=i%(#p1)+1
     local edge=p1[n]-p1[i]
     local norm=edge:perp()
-    return not sat2:overlap(
+    if (not sat2:overlap(
       sat2:project(p1,norm),
-      sat2:project(p2,norm))
+      sat2:project(p2,norm)
+    )) then return true end
   end
 end
 

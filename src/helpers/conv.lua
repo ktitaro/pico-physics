@@ -10,3 +10,8 @@ function tobin(v)
   end
   return b
 end
+
+-- Converts bool into int.
+function btoi(v)
+  return v and 1 or 0
+end

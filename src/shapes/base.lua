@@ -5,6 +5,10 @@
 shape2={}
 shape2.__index=shape2
 
+-- Properties
+shape2.w=0 -- width of the shape
+shape2.h=0 -- height of the shape
+
 -- Creates an instance of shape2
 -- using the provided set of props.
 function shape2:new(p)

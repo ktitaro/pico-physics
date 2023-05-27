@@ -2,10 +2,6 @@ rect2={}
 rect2.__index=rect2
 setmetatable(rect2,shape2)
 
--- Properties:
-rect2.w=0 -- width
-rect2.h=0 -- height
-
 -- Creates an instance of a rect2
 -- using the provided set of props.
 function rect2:new(p)

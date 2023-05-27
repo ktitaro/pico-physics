@@ -2,10 +2,6 @@ oval2={}
 oval2.__index=oval2
 setmetatable(oval2,shape2)
 
--- Properties:
-oval2.w=0 -- width
-oval2.h=0 -- height
-
 -- Creates an instance of an oval2
 -- using the provided set of props.
 function oval2:new(p)
