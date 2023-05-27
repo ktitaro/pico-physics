@@ -3,7 +3,7 @@ poly2.__index=poly2
 setmetatable(poly2,shape2)
 
 -- Properties:
-poly2.v={} -- vertexes
+poly2.e={} -- vertexes
 
 -- Creates an instance of a poly2
 -- using the provided set of props.
@@ -14,12 +14,12 @@ end
 -- Calculates the width and height
 -- of an arbitrary convex polygon.
 function poly2:get_size()
-  local l=self.v[1].x
-  local r=self.v[1].x
-  local t=self.v[1].y
-  local b=self.v[1].y
-  for i=2,#self.v do
-    local v=self.v[i]
+  local l=self.e[1].x
+  local r=self.e[1].x
+  local t=self.e[1].y
+  local b=self.e[1].y
+  for i=2,#self.e do
+    local v=self.e[i]
     if (v.x<l) l=v.x
     if (v.x>r) r=v.x
     if (v.y<t) r=v.y
@@ -38,8 +38,8 @@ end
 function poly2:get_poly(pt)
   pt=(pt or vec2:new())
   local p={}
-  for i=1,#self.v do
-    add(p,self.v[i]+pt)
+  for i=1,#self.e do
+    add(p,self.e[i]+pt)
   end
   return p
 end
