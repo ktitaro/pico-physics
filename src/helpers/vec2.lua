@@ -1,7 +1,8 @@
 vec2={}
 vec2.__index=vec2
 
--- Creates new 2d vector.
+-- Creates an instance of a vec2
+-- using a given components (x,y).
 function vec2:new(x,y)
   x,y=(x or 0),(y or 0)
   return setmetatable({
@@ -18,7 +19,7 @@ function vec2:mag2()
 end
 
 -- Calculates the magnitude
--- (or lenght) of the vector.
+-- (or length) of the vector.
 function vec2:mag()
   local m2=self:mag2()
   return sqrt(m2)

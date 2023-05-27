@@ -1,14 +1,14 @@
 -- Attempts to draw and paint
--- an arbitraty 2d polygon.
+-- an arbitrary 2d polygon.
 function draw_poly(v,c,s)
   s=(s or "line")
   for i=1,#v do
     if (s=="pset") then
-      pset(p[i].x,p[i].y,k)
+      pset(v[i].x,v[i].y,c)
     elseif (s=="line") then
-      local ni=i%#p+1
-      local c,n=p[i],p[ni]
-      line(c.x,c.y,n.x,n.y,k)
+      local ni=i%#v+1
+      local vc,vn=v[i],v[ni]
+      line(vc.x,vc.y,vn.x,vn.y,c)
     end
   end
 end
