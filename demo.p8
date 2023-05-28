@@ -1,20 +1,10 @@
 pico-8 cartridge // http://www.pico-8.com
 version 41
 __lua__
-#include ../src/toolbox/debug.lua
-#include ../src/helpers/math.lua
-#include ../src/helpers/conv.lua
-#include ../src/helpers/vec2.lua
-#include ../src/helpers/sat2.lua
-#include ../src/shapes/base.lua
-#include ../src/shapes/oval2.lua
-#include ../src/shapes/rect2.lua
-#include ../src/shapes/poly2.lua
-#include ../src/physics/area.lua
-#include ../src/physics/body.lua
-#include ./things.lua
-#include ./player.lua
-#include ./game.lua
+#include ./src/pico-physics.lua
+#include ./src/things.lua
+#include ./src/player.lua
+#include ./src/game.lua
 __gfx__
 00000000010001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
