@@ -3,20 +3,15 @@ robby.__index=robby
 setmetatable(robby,body)
 
 local poly={}
-add(poly,vec2:new(5,0))
-add(poly,vec2:new(10,8))
-add(poly,vec2:new(5,16))
-add(poly,vec2:new(0,8))
+add(poly,vec2:new(4,0))
+add(poly,vec2:new(8,12))
+add(poly,vec2:new(0,12))
 
-for i=1,#poly do
-  poly[i]=poly[i]:scale(1.5)
-end
-
-function robby:new(x,y,reg)
+function robby:new(props)
   return body.new(self,poly2,{
-    p=vec2:new(x,y),
-    reg=reg,e=poly,
-    cl=3,cm={1,2},
+    p=vec2:new(props.x,props.y),
+    reg=props.reg,e=poly,
+    cl={2},cm={1},
     col=12,
   })
 end

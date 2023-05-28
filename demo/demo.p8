@@ -12,7 +12,7 @@ __lua__
 #include ../src/shapes/poly2.lua
 #include ../src/physics/area.lua
 #include ../src/physics/body.lua
-#include ./shapes.lua
+#include ./things.lua
 #include ./player.lua
 #include ./game.lua
 __gfx__
