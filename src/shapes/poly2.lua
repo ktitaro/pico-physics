@@ -8,7 +8,9 @@ poly2.e={} -- vertexes
 -- Creates an instance of a poly2
 -- using the provided set of props.
 function poly2:new(p)
-  return shape2.new(self,p)
+  local obj=shape2.new(self,p)
+  obj.w,obj.h=obj:get_size()
+  return obj
 end
 
 -- Calculates the width and height
